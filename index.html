@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Retiro, Antioquia</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('imagenes/iglesia-el-retiro.jpg'); /* Fondo de la iglesia principal */
+            background-size: cover;
+            color: #333;
+            padding: 20px;
+        }
+        .section {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Explora El Retiro, Antioquia</h1>
+
+    <!-- Botones de navegación -->
+    <button onclick="showSection('historia')">Historia</button>
+    <button onclick="showSection('comida')">Comida Típica</button>
+    <button onclick="showSection('gentilicio')">Gentilicio</button>
+    <button onclick="showSection('rios')">Ríos y Quebradas</button>
+    <button onclick="showSection('turismo')">Puntos Turísticos</button>
+    <button onclick="showSection('personajes')">Personajes Importantes</button>
+
+    <!-- Secciones de contenido -->
+    <div id="historia" class="section">
+        <h2>Historia</h2>
+        <p>El Retiro fue fundado en el siglo XVIII y es conocido como "la cuna de la libertad" en Antioquia...</p>
+    </div>
+
+    <div id="comida" class="section">
+        <h2>Comida Típica</h2>
+        <p>Entre los platos tradicionales destacan la bandeja paisa, el sancocho, y los dulces de arequipe...</p>
+    </div>
+
+    <div id="gentilicio" class="section">
+        <h2>Gentilicio</h2>
+        <p>Los habitantes de El Retiro son llamados "guarceños", término que refleja el arraigo local...</p>
+    </div>
+
+    <div id="rios" class="section">
+        <h2>Ríos y Quebradas</h2>
+        <p>El Retiro cuenta con el Río Pantanillo y otras quebradas, importantes para el ecosistema local...</p>
+    </div>
+
+    <div id="turismo" class="section">
+        <h2>Puntos Turísticos</h2>
+        <p>Los visitantes pueden explorar el embalse La Fe, el parque principal y la ruta de la madera...</p>
+    </div>
+
+    <div id="personajes" class="section">
+        <h2>Personajes Importantes</h2>
+        <p>Figuras como José Joaquín de Arango y Carlos Mauro Hoyos han dejado huella en la historia de El Retiro...</p>
+    </div>
+
+    <!-- JavaScript para mostrar/ocultar secciones -->
+    <script>
+        function showSection(sectionId) {
+            // Oculta todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Muestra solo la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
