@@ -3,86 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Retiro, Antioquia</title>
+    <title>El Retiro - Antioquia</title>
     <style>
-        /* Estilos básicos */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('imagenes/iglesia-el-retiro.jpg'); /* Fondo de la iglesia principal */
-            background-size: cover;
+            margin: 0;
+            padding: 0;
             color: #333;
-            padding: 20px;
+            background-image: url('./images/Imagen-de-WhatsApp-2023-01-05-a-las-10.33.16.jpg'); /* Imagen de fondo de la iglesia */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
-        .section {
+        header {
+            background-color: rgba(46, 139, 87, 0.9);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(34, 49, 63, 0.9);
+            padding: 10px 0;
+        }
+        nav button {
+            background-color: #556B2F;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background-color: #6B8E23;
+        }
+        section {
             display: none;
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
             padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;
             border-radius: 8px;
-            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .active {
+        section.active {
             display: block;
         }
-        button {
-            margin: 5px;
-            padding: 10px;
-            font-size: 16px;
+        h2 {
+            color: #2E8B57;
+            margin-top: 0;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll("section").forEach(section => {
+                section.classList.remove("active");
+            });
+            document.getElementById(sectionId).classList.add("active");
+        }
+    </script>
 </head>
 <body>
 
-    <h1>Explora El Retiro, Antioquia</h1>
+    <header>
+        <h1>Bienvenidos a El Retiro, Antioquia</h1>
+        <p>Explora la historia, cultura, y naturaleza de este encantador municipio antioqueño.</p>
+    </header>
 
-    <!-- Botones de navegación -->
-    <button onclick="showSection('historia')">Historia</button>
-    <button onclick="showSection('comida')">Comida Típica</button>
-    <button onclick="showSection('gentilicio')">Gentilicio</button>
-    <button onclick="showSection('rios')">Ríos y Quebradas</button>
-    <button onclick="showSection('turismo')">Puntos Turísticos</button>
-    <button onclick="showSection('personajes')">Personajes Importantes</button>
+    <nav>
+        <button onclick="showSection('historia')">Historia</button>
+        <button onclick="showSection('comida')">Comida</button>
+        <button onclick="showSection('gentilicio')">Gentilicio</button>
+        <button onclick="showSection('rios')">Ríos y Quebradas</button>
+        <button onclick="showSection('puntos')">Puntos Turísticos</button>
+        <button onclick="showSection('personajes')">Personajes Importantes</button>
+    </nav>
 
-    <!-- Secciones de contenido -->
-    <div id="historia" class="section">
+    <!-- Sección Historia -->
+    <section id="historia">
         <h2>Historia</h2>
-        <p>El Retiro fue fundado en el siglo XVIII y es conocido como "la cuna de la libertad" en Antioquia...</p>
-    </div>
+        <img src="./images/capilla san jose.jpg" alt="Arquitectura colonial en El Retiro">
+        <p>El Retiro, fundado en 1790, tiene una rica historia que incluye su papel en la independencia de Antioquia y su desarrollo como centro de comercio de madera y muebles. La historia de El Retiro está marcada por la ebanistería, una actividad que lo posicionó como referente en la industria de muebles de alta calidad. En el siglo XIX, el municipio se consolidó como punto estratégico para comerciantes y arrieros que cruzaban la región.</p>
+        <p>Con el paso del tiempo, el desarrollo agrícola y la ganadería se integraron en su economía. Actualmente, El Retiro conserva su encanto colonial, con casas de fachadas coloridas y calles empedradas, atrayendo a visitantes interesados en la historia y la cultura de Antioquia.</p>
+    </section>
 
-    <div id="comida" class="section">
-        <h2>Comida Típica</h2>
-        <p>Entre los platos tradicionales destacan la bandeja paisa, el sancocho, y los dulces de arequipe...</p>
-    </div>
+    <!-- Sección Comida -->
+    <section id="comida">
+        <h2>Comida</h2>
+        <img src="./images/Comida tipica.jpg" alt="Comida típica de El Retiro">
+        <p>La gastronomía de El Retiro es una fusión de sabores tradicionales antioqueños. La bandeja paisa, el sancocho antioqueño, y el asado al carbón son platos infaltables. Aquí, los productos frescos de las montañas y las recetas locales reflejan la cultura retireña.</p>
+        <p>Entre sus delicias, destacan las arepas de chócolo, buñuelos, pandebonos, y empanadas, todos acompañados de café de fincas locales. La calidad del café en El Retiro es reconocida, y el municipio se ha convertido en un destino popular para los amantes del café, quienes disfrutan de diversas preparaciones en las cafeterías locales.</p>
+    </section>
 
-    <div id="gentilicio" class="section">
+    <!-- Sección Gentilicio -->
+    <section id="gentilicio">
         <h2>Gentilicio</h2>
-        <p>Los habitantes de El Retiro son llamados "guarceños", término que refleja el arraigo local...</p>
-    </div>
+        <img src="./images/Manada de gente.jpg" alt="Gente de El Retiro">
+        <p>Los habitantes de El Retiro se conocen como <strong>guarceños</strong>. Son personas trabajadoras, hospitalarias y dedicadas a preservar sus tradiciones culturales y naturales. Las fiestas y eventos locales reflejan su espíritu comunitario y su orgullo por las raíces antioqueñas. Además, los retireños destacan por su habilidad en la ebanistería y la agricultura, herencia de generaciones anteriores que sigue vigente.</p>
+    </section>
 
-    <div id="rios" class="section">
+    <!-- Sección Ríos y Quebradas -->
+    <section id="rios">
         <h2>Ríos y Quebradas</h2>
-        <p>El Retiro cuenta con el Río Pantanillo y otras quebradas, importantes para el ecosistema local...</p>
-    </div>
+        <img src="./images/Rio coso.jpg" alt="Río Pantanillo">
+        <p>El Retiro cuenta con importantes recursos hídricos, entre ellos el <strong>río Pantanillo</strong> y la <strong>quebrada La Fe</strong>. Estos cuerpos de agua son esenciales para la biodiversidad de la región y también brindan espacios recreativos para locales y turistas.</p>
+        <p>La quebrada La Fe, que abastece de agua potable a la región, es popular para el senderismo y los picnics. Las autoridades locales han implementado proyectos para preservar estos recursos naturales y promover el ecoturismo en la zona, fomentando el respeto y cuidado del medio ambiente.</p>
+    </section>
 
-    <div id="turismo" class="section">
+    <!-- Sección Puntos Turísticos -->
+    <section id="puntos">
         <h2>Puntos Turísticos</h2>
-        <p>Los visitantes pueden explorar el embalse La Fe, el parque principal y la ruta de la madera...</p>
-    </div>
+        <img src="./images/represa fe.webp" alt="Embalse La Fe">
+        <ul>
+            <li><strong>Embalse La Fe:</strong> Espacio natural perfecto para actividades acuáticas y observación de aves, rodeado de montañas.</li>
+            <li><strong>Parque Principal:</strong> En el centro de El Retiro, rodeado de arquitectura colonial, es ideal para experimentar la vida local.</li>
+            <li><strong>Casa Museo La Madera:</strong> Un museo que relata la historia de la ebanistería en El Retiro, con muestras de muebles tradicionales.</li>
+            <li><strong>Sendero Ecológico La Ceja:</strong> Ruta de senderismo para disfrutar de vistas panorámicas y la rica biodiversidad de la región.</li>
+        </ul>
+    </section>
 
-    <div id="personajes" class="section">
+    <!-- Sección Personajes Importantes -->
+    <section id="personajes">
         <h2>Personajes Importantes</h2>
-        <p>Figuras como José Joaquín de Arango y Carlos Mauro Hoyos han dejado huella en la historia de El Retiro...</p>
-    </div>
+        <img src="./images/JAVIERA.jpg" alt="Personajes importantes de El Retiro">
+        <p>El Retiro ha sido hogar de figuras destacadas que contribuyeron a su desarrollo. <strong>José María Ceballos</strong> es recordado por su labor en la promoción de la cultura y el comercio. <strong>Manuel Uribe Ángel</strong>, empresario en la industria maderera, ayudó a posicionar a El Retiro como un referente en la fabricación de muebles de alta calidad.</p>
+        <p>Estos personajes son parte de la historia viva de El Retiro, y sus legados continúan influyendo en la cultura y economía del municipio.</p>
+    </section>
 
-    <!-- JavaScript para mostrar/ocultar secciones -->
-    <script>
-        function showSection(sectionId) {
-            // Oculta todas las secciones
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-
-            // Muestra solo la sección seleccionada
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
 </body>
 </html>
